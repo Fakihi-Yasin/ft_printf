@@ -67,30 +67,12 @@ int ft_puthex(unsigned long n, int uppercase)
     return (count);
 }
 
-int ft_putnbr_unsigned(unsigned int n){
-    
+int ft_putptr(void *ptr) {
     int count = 0;
+    unsigned long addr = (unsigned long)ptr;
     
-    if(n >= 10)
-        count += ft_putnbr_unsigned(n / 10);
-    ft_putchar((n % 10) + '0');
-    count++;
-    return count;
-}
-
-int ft_putptr(void *ptr)
-{
-    unsigned long address;
-    int count = 0;
-
-    if (!ptr)
-        return ft_putstr("(nil)");
-
-    address = (unsigned long)ptr;
-
     count += ft_putstr("0x");
-    count += ft_puthex(address, 0);
-
+    count += ft_puthex(addr, 0);
     return count;
 }
 
