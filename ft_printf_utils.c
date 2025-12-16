@@ -10,42 +10,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
-int ft_putchar(int c){
-    write(1, &c, 1);
-    return (1);
+int ft_putchar(char c) {
+    return write(1, &c, 1);
 }
 
-int ft_putstr(char *str)
-{
-    int i;
-    int len = 0;
-    i = 0;
-    while (str[i])
-    {
-        len += ft_putchar(str[i]);
-        i++;
+int ft_putstr(char *s) {
+    int count = 0;
+    if (!s)
+        return ;
+    while (*s) {
+        count += ft_putchar(*s);
+        s++;
     }
-    return (len);
+    return count;
 }
 
-
-void ft_putnbr(int n)
-{
-    if (n < 0)
-    {
-        ft_putchar('-');
-        n = -n;
+int ft_putnbr(int n) {
+    int count = 0;
+    long num = n;
+    
+    if (num < 0) {
+        count += ft_putchar('-');
+        num = -num;
     }
+    if (num >= 10)
+        count += ft_putnbr(num / 10);
+    count += ft_putchar((num % 10) + '0');
+    return count;
+}
+
+int ft_putnbr_unsigned(unsigned int n) {
+    int count = 0;
+    
     if (n >= 10)
-    {
-        ft_putnbr(n / 10);
-    }
-    ft_putchar((n % 10) + '0');
+        count += ft_putnbr_unsigned(n / 10);
+    count += ft_putchar((n % 10) + '0');
+    return count;
 }
-
 int ft_puthex(unsigned long n, int uppercase)
 {
     char *hex_digits;
