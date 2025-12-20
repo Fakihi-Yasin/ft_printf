@@ -6,7 +6,7 @@
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 03:27:03 by yafakihi          #+#    #+#             */
-/*   Updated: 2025/12/16 18:55:00 by yafakihi         ###   ########.fr       */
+/*   Updated: 2025/12/20 02:24:56 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 
 int		ft_putnbr(int n);
+int     ft_putnbr_unsigned(unsigned int n);
 int		ft_putstr(const char *str);
 int		ft_putchar(char c);
 int		ft_puthex(unsigned long n, int uppercase);
