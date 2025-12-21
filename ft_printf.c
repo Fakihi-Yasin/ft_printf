@@ -53,7 +53,7 @@ int	ft_printf(const char *format, ...)
 	int		count;
 	int		i;
 
-	if (!format)
+	if (format == NULL)
 		return (0);
 	va_start(ptr, format);
 	i = 0;
@@ -62,12 +62,11 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
-			count += printformat(format[i++], ptr);
+			count += printformat(format[i + 1], ptr);
+			i++;
 		}
 		else if (format[i] == '%' && !format[i + 1])
-		{
 			break ;
-		}
 		else
 			count += ft_putchar(format[i]);
 		i++;
@@ -76,7 +75,7 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-// int	main(void)
+// int	main()
 // {
 // 	int x = 42;
 
@@ -89,18 +88,4 @@ int	ft_printf(const char *format, ...)
 // 	ft_printf("unsigned: %u\n", 4294967295u);
 // 	ft_printf("hex lower: %x\n", 255);
 // 	ft_printf("hex upper: %X\n", 255);
-// 	ft_printf("percent: %%\n");
-
-// 	ft_printf("\n=== Test 2: Multiple variables ===\n");
-// 	ft_printf("Mix: %c %s %d %x %p\n", 'Z', "test", 42, 255, &x);
-
-// 	ft_printf("\n=== Test 3: Five variables ===\n");
-// 	ft_printf("v1=%d, v2=%d, v3=%d, v4=%d, v5=%d\n", 10, 20, 30, 40, 50);
-
-// 	ft_printf("\n=== Test 4: Edge cases ===\n");
-// 	ft_printf("NULL string: %s\n", NULL);
-// 	ft_printf("Zero: %d\n", 0);
-// 	ft_printf("Negative: %d\n", -2147483648);
-
-// 	return (0);
 // }
