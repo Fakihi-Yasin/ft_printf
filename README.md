@@ -1,7 +1,6 @@
 # ft_printf
-# ft_printf
 
-*This project has been created as part of the 42 curriculum by [Your Name], [Collaborator Name if any].*
+*This project has been created as part of the 42 curriculum by yafakihi.*
 
 ---
 
