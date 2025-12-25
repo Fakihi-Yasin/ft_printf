@@ -6,7 +6,7 @@
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 18:04:54 by yafakihi          #+#    #+#             */
-/*   Updated: 2025/12/20 18:30:43 by yafakihi         ###   ########.fr       */
+/*   Updated: 2025/12/25 14:12:13 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,6 @@ int	ft_printf(const char *format, ...)
 
 // int	main()
 // {
-// 	int x = 42;
-
-// 	ft_printf("=== Test 1: All conversions ===\n");
-// 	ft_printf("char: %c\n", 'A');
-// 	ft_printf("string: %s\n", "Hello");
-// 	ft_printf("pointer: %p\n", &x);
-// 	ft_printf("decimal: %d\n", -42);
-// 	ft_printf("integer: %i\n", 123);
-// 	ft_printf("unsigned: %u\n", 4294967295u);
-// 	ft_printf("hex lower: %x\n", 255);
-// 	ft_printf("hex upper: %X\n", 255);
+// 	char *p = "hello";
+// 	ft_printf(p);
 // }

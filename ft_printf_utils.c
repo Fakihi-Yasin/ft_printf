@@ -6,7 +6,7 @@
 /*   By: yafakihi <yafakihi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:08:42 by yafakihi          #+#    #+#             */
-/*   Updated: 2025/12/20 18:30:29 by yafakihi         ###   ########.fr       */
+/*   Updated: 2025/12/25 14:11:31 by yafakihi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int	ft_putptr(void *ptr)
 	int				count;
 	unsigned long	addr;
 
+	if (ptr == NULL)
+		write(1, "(nil)", 5);
 	count = 0;
 	addr = (unsigned long)ptr;
 	count += ft_putstr("0x");
